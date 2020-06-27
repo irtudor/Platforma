@@ -3,6 +3,7 @@ package services;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import customer.CustomerController;
 import exceptions.CouldNotWriteUsersException;
 import exceptions.UsernameAlreadyExistsException;
 import models.User;
@@ -86,7 +87,7 @@ public class UsersService {
                     if (Objects.equals(user.getPassword(), encodePassword(username, password))) {
                         if (Objects.equals(role, user.getRole())) {
                             if (Objects.equals(role, "User")) {
-                                // CustomerController.openCustomerPanel();aici deschideti panel-ul pt user
+                                 CustomerController.openCustomerPanel();
                             } else if (Objects.equals(role, "Manager")) {
                                 Path STORE_PATH = FileSystemService.getPathToFile("config", username + ".json");
                                 // ManagerController.openManagerPanel();
