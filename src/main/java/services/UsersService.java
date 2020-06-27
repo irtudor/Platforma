@@ -8,8 +8,6 @@ import exceptions.CouldNotWriteUsersException;
 import exceptions.UsernameAlreadyExistsException;
 import models.User;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
