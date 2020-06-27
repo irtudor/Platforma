@@ -1,0 +1,10 @@
+register\RegisterController.class
+services\FileSystemService.class
+main.class
+customer\CustomerController.class
+exceptions\UsernameAlreadyExistsException.class
+models\User.class
+services\UsersService.class
+exceptions\CouldNotWriteUsersException.class
+login\LoginController.class
+services\UsersService$1.class
