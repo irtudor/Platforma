@@ -17,6 +17,6 @@
       <PasswordField fx:id="passin" layoutX="275.0" layoutY="179.0" />
       <Text layoutX="240.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="role:" />
       <ChoiceBox fx:id="role" layoutX="275.0" layoutY="226.0" prefHeight="25.0" prefWidth="98.0" />
-      <Button fx:id="logginbutton" layoutX="251.0" layoutY="273.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Log In" />
+      <Button onAction="#login" fx:id="logginbutton" layoutX="251.0" layoutY="273.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Log In" />
    </children>
 </AnchorPane>

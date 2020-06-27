@@ -9,6 +9,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import services.UsersService;
 
 public class LoginController {
     @FXML
@@ -23,16 +24,19 @@ public class LoginController {
     private Button createbutton;
 
 
-public void initialize(){
-    role.getItems().setAll("Manager","User");
-}
+    public void initialize(){
+        role.getItems().setAll("Manager","User");
+    }
 
-public void openRegister() throws Exception{
-    Parent registerWindow = FXMLLoader.load(getClass().getResource("/register.fxml"));
-    Scene registerScene = new Scene(registerWindow);
-    Stage window = new Stage();
-    window.setScene(registerScene);
-    window.setTitle("Register");
-    window.show();
-}
+    public void openRegister() throws Exception{
+        Parent registerWindow = FXMLLoader.load(getClass().getResource("/register.fxml"));
+        Scene registerScene = new Scene(registerWindow);
+        Stage window = new Stage();
+        window.setScene(registerScene);
+        window.setTitle("Register");
+        window.show();
+    }
+    public void login() throws Exception {
+        UsersService.checkUsers(userin.getText(),passin.getText(),(String)role.getValue());
+    }
 }

@@ -81,7 +81,7 @@ public class User {
         this.password = password;
     }
 
-    public User(String username, String email, String card, String role, String password){
+    public User(String username, String password, String role,String email,String card){
         this.username=username;
         this.card=card;
         this.email=email;
