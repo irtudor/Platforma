@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="register.RegisterController">
+   <children>
+      <Text layoutX="145.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username:" />
+      <Text layoutX="164.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="e-mail:" />
+      <Text layoutX="137.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="card details:" />
+      <Text layoutX="146.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="password:" />
+      <TextField fx:id="userreg" layoutX="226.0" layoutY="126.0" />
+      <TextField fx:id="mailreg" layoutX="226.0" layoutY="162.0" />
+      <TextField fx:id="cardreg" layoutX="226.0" layoutY="196.0" />
+      <PasswordField fx:id="passreg" layoutX="226.0" layoutY="235.0" />
+      <Button fx:id="confirmreg" layoutX="271.0" layoutY="289.0" mnemonicParsing="false" text="Confirm" />
+      <Text layoutX="201.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="role:" />
+      <ChoiceBox fx:id="rolereg" layoutX="259.0" layoutY="68.0" prefHeight="25.0" prefWidth="81.0" />
+   </children>
+</AnchorPane>
