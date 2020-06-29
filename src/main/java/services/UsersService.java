@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import customer.CustomerController;
 import exceptions.CouldNotWriteUsersException;
 import exceptions.UsernameAlreadyExistsException;
+import manager.ManagerController;
 import models.User;
 
 import java.io.IOException;
@@ -88,7 +89,7 @@ public class UsersService {
                                  CustomerController.openCustomerPanel();
                             } else if (Objects.equals(role, "Manager")) {
                                 Path STORE_PATH = FileSystemService.getPathToFile("config", username + ".json");
-                                // ManagerController.openManagerPanel();
+                                 ManagerController.openManagerPanel();
                             } else {
                                 JOptionPane.showMessageDialog(null, "Wrong credentials");
                             }
