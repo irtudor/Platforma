@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import services.FileSystemService;
 import services.MoviesService;
+import services.SeriesService;
 import services.UsersService;
 
 import java.nio.file.Path;
@@ -19,6 +20,7 @@ public class main extends Application {
     public void start(Stage primaryStage) throws Exception {
         UsersService.loadUsersFromFile();
         MoviesService.loadMoviesFromFile();
+        SeriesService.loadSeriesFromFile();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("login.fxml"));
         primaryStage.setTitle("Log In");
         primaryStage.setScene(new Scene(root, 600, 600));
