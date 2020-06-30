@@ -1,5 +1,6 @@
 package models;
 
+import java.util.Date;
 import java.util.Objects;
 
 public class User {
@@ -8,6 +9,7 @@ public class User {
     private String card;
     private String role;
     private String password;
+    private Long accountCreationTime;
 
     public User(){
 
@@ -21,6 +23,7 @@ public class User {
                 ", card='" + card + '\'' +
                 ", role='" + role + '\'' +
                 ", password='" + password + '\'' +
+                ", accountCreationTime='" + accountCreationTime + '\'' +
                 '}';
     }
 
@@ -81,11 +84,24 @@ public class User {
         this.password = password;
     }
 
-    public User(String username, String password, String role,String email,String card){
+    public long getAccountCreationTime() {
+        return accountCreationTime;
+    }
+
+    public void setAccountCreationTime(long accountCreationTime) {
+        this.accountCreationTime = accountCreationTime;
+    }
+
+    public User(String username, String password, String role, String email, String card){
         this.username=username;
         this.card=card;
         this.email=email;
         this.role=role;
         this.password=password;
+        this.accountCreationTime = System.currentTimeMillis();
+    }
+
+    public boolean accountActive() {
+        return System.currentTimeMillis() < accountCreationTime + 262974383; //one month
     }
 }

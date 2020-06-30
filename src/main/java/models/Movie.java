@@ -7,6 +7,7 @@ public class Movie {
     private String year;
     private String description;
     private String review;
+    private int rate;
 
     public Movie(){
 
@@ -17,6 +18,7 @@ public class Movie {
         this.year = year;
         this.description = description;
         this.review = review;
+        this.rate = -1;
     }
 
     @Override
@@ -26,6 +28,7 @@ public class Movie {
                 ", year='" + year + '\'' +
                 ", description='" + description + '\'' +
                 ", review='" + review + '\'' +
+                ", rate='" + rate + '\'' +
                 '}';
     }
 
@@ -75,5 +78,13 @@ public class Movie {
 
     public void setReview(String review){
         this.review = review;
+    }
+
+    public int getRate(){
+        return rate;
+    }
+
+    public void setRate(int rate){
+        this.rate = rate;
     }
 }

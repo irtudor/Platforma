@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customer.CustomerController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customer.CustomerController">
    <children>
-      <Button fx:id="serial" layoutX="382.0" layoutY="157.0" mnemonicParsing="false" prefHeight="87.0" prefWidth="125.0" text="SERIALE" />
-      <Button fx:id="film" layoutX="117.0" layoutY="157.0" mnemonicParsing="false" prefHeight="87.0" prefWidth="125.0" text="FILME" />
+      <Text layoutX="128.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Movies" wrappingWidth="81.60000000000014" />
+      <ChoiceBox fx:id="moviesList" layoutX="38.0" layoutY="50.0" prefHeight="25.0" prefWidth="262.0" onAction="#handleMovieChanged"/>
+      <Text fx:id="movieDetails" layoutX="38.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="211.0" />
+
+      <Text layoutX="416.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Series" wrappingWidth="81.60000000000014" />
+      <ChoiceBox fx:id="seriesList" layoutX="326.0" layoutY="50.0" prefHeight="25.0" prefWidth="262.0" />
+      <Text fx:id="seriesDetails" layoutX="326.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="262.0" />
+
+      <Text fx:id="accountExpired" layoutX="259.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="81.60000000000014" />
    </children>
 </AnchorPane>

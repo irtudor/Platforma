@@ -86,6 +86,7 @@ public class UsersService {
                     if (Objects.equals(user.getPassword(), encodePassword(username, password))) {
                         if (Objects.equals(role, user.getRole())) {
                             if (Objects.equals(role, "User")) {
+                                CustomerController.user = user;
                                  CustomerController.openCustomerPanel();
                             } else if (Objects.equals(role, "Manager")) {
                                 Path STORE_PATH = FileSystemService.getPathToFile("config", username + ".json");
