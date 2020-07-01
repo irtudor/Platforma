@@ -11,15 +11,19 @@
    <children>
       <Text layoutX="145.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username:" />
       <Text layoutX="164.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="e-mail:" />
-      <Text fx:id="cardreglabel" layoutX="137.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="card details:"/>
+      <Text fx:id="cardreglabel" layoutX="140.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="card details:" />
+      <Text fx:id="cvvlabel" layoutX="384.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="cvv:" />
       <Text layoutX="146.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="password:" />
       <TextField fx:id="userreg" layoutX="226.0" layoutY="126.0" />
       <TextField fx:id="mailreg" layoutX="226.0" layoutY="162.0" />
-      <TextField fx:id="cardreg" layoutX="226.0" layoutY="235.0"/>
+      <TextField fx:id="phonenumberreg" layoutX="225.0" layoutY="237.0" />
       <PasswordField fx:id="passreg" layoutX="226.0" layoutY="196.0" />
-      <Button fx:id="confirmreg" layoutX="271.0" layoutY="289.0" mnemonicParsing="false" onAction="#handleRegisterAction" text="Confirm" />
+      <TextField fx:id="cardreg" layoutX="225.0" layoutY="272.0" />
+      <Button fx:id="confirmreg" layoutX="271.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleRegisterAction" text="Confirm" />
       <Text layoutX="201.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="role:" />
-      <ChoiceBox fx:id="rolereg" layoutX="259.0" layoutY="68.0" prefHeight="25.0" prefWidth="81.0" onAction="#handleRoleChangedAction"/>
+      <ChoiceBox fx:id="rolereg" layoutX="259.0" layoutY="68.0" onAction="#handleRoleChangedAction" prefHeight="25.0" prefWidth="81.0" />
       <Text fx:id="registerMessage" layoutX="230.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="81.60000000000014" />
+      <Text fx:id="phoneNumberLabel" layoutX="123.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="phone number:" />
+      <TextField fx:id="cvvreg" layoutX="412.0" layoutY="272.0" prefHeight="25.0" prefWidth="36.0" />
    </children>
 </AnchorPane>

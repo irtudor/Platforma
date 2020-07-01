@@ -43,7 +43,7 @@ public class MoviesService {
         }
     }
 
-    private static void persistMovies() throws IOException {
+    public static void persistMovies() throws IOException {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(MOVIES_PATH.toFile(), movies);

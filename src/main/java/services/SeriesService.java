@@ -3,6 +3,7 @@ package services;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import customer.CustomerController;
 import exceptions.SeriesAlreadyExistsException;
 import models.Series;
 import org.apache.commons.io.FileUtils;
@@ -26,6 +27,7 @@ public class SeriesService {
 
         seriesList = objectMapper.readValue(SERIES_PATH.toFile(), new TypeReference<List<Series>>() {
         });
+        CustomerController.series = seriesList;
     }
 
     public static void addSeries(String title, String season, String episode, String year, String description, String review) throws SeriesAlreadyExistsException, IOException {
@@ -44,7 +46,7 @@ public class SeriesService {
         }
     }
 
-    private static void persistSeries() throws IOException {
+    public static void persistSeries() throws IOException {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(SERIES_PATH.toFile(), seriesList);

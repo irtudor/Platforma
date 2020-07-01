@@ -7,7 +7,8 @@ public class Movie {
     private String year;
     private String description;
     private String review;
-    private int rate;
+    private double rate;
+    private int nrOfRatings;
 
     public Movie(){
 
@@ -19,6 +20,7 @@ public class Movie {
         this.description = description;
         this.review = review;
         this.rate = -1;
+        this.nrOfRatings = 0;
     }
 
     @Override
@@ -29,6 +31,7 @@ public class Movie {
                 ", description='" + description + '\'' +
                 ", review='" + review + '\'' +
                 ", rate='" + rate + '\'' +
+                ", nrOfRatings='" + nrOfRatings + '\'' +
                 '}';
     }
 
@@ -80,11 +83,17 @@ public class Movie {
         this.review = review;
     }
 
-    public int getRate(){
-        return rate;
+    public double getRate(){ return rate; }
+
+    public void setRate(double rate){
+        this.rate = rate;
     }
 
-    public void setRate(int rate){
-        this.rate = rate;
+    public int getNrOfRatings(){
+        return nrOfRatings;
+    }
+
+    public void setNrOfRatings(int nrOfRatings){
+        this.nrOfRatings = nrOfRatings;
     }
 }

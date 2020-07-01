@@ -35,9 +35,9 @@ public class UsersService {
         users = objectMapper.readValue(USERS_PATH.toFile(), new TypeReference<List<User>>() {
         });
     }
-    public static void addUser(String username, String password, String role,String email,String card) throws UsernameAlreadyExistsException {
+    public static void addUser(String username, String password, String phoneNumber, String role, String email, String card, String cvv) throws UsernameAlreadyExistsException {
         checkUserDoesNotAlreadyExist(username);
-        users.add(new User(username, encodePassword(username, password), role,email,card));
+        users.add(new User(username, encodePassword(username, password), phoneNumber, role, email, card, cvv));
         persistUsers();
     }
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
@@ -47,7 +47,7 @@ public class UsersService {
         }
     }
 
-    private static void persistUsers() {
+    public static void persistUsers() {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(USERS_PATH.toFile(), users);

@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customer.CustomerController">
    <children>
       <Text layoutX="128.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Movies" wrappingWidth="81.60000000000014" />
-      <ChoiceBox fx:id="moviesList" layoutX="38.0" layoutY="50.0" prefHeight="25.0" prefWidth="262.0" onAction="#handleMovieChanged"/>
+      <ChoiceBox fx:id="moviesList" layoutX="38.0" layoutY="50.0" onAction="#handleMovieChanged" prefHeight="25.0" prefWidth="262.0" />
       <Text fx:id="movieDetails" layoutX="38.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="211.0" />
+      <Text layoutX="38.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Give rating:" wrappingWidth="66.0" />
+      <TextField fx:id="movieRateInput" layoutX="104.0" layoutY="187.0" prefHeight="25.0" prefWidth="40.0" />
+      <Button fx:id="movieRateCommand" layoutX="149.0" layoutY="187.0" mnemonicParsing="false" onAction="#handleMovieRateCommand" text="Rate" />
+      <Button fx:id="watchMovieButton" layoutX="61.0" layoutY="246.0" mnemonicParsing="false" onAction="#handleWatchMovie" prefHeight="89.0" prefWidth="126.0" text="Watch movie" />
 
       <Text layoutX="416.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Series" wrappingWidth="81.60000000000014" />
-      <ChoiceBox fx:id="seriesList" layoutX="326.0" layoutY="50.0" prefHeight="25.0" prefWidth="262.0" />
+      <ChoiceBox fx:id="seriesList" layoutX="326.0" layoutY="50.0" onAction="#handleSeriesChanged" prefHeight="25.0" prefWidth="262.0" />
       <Text fx:id="seriesDetails" layoutX="326.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="262.0" />
+      <Text layoutX="383.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Give rating:" wrappingWidth="66.0" />
+      <TextField fx:id="seriesRateInput" layoutX="459.0" layoutY="188.0" prefHeight="25.0" prefWidth="40.0" />
+      <Button fx:id="seriesRateCommand" layoutX="511.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleSeriesRateCommand" text="Rate" />
+      <Button fx:id="watchSeriesButton" layoutX="416.0" layoutY="246.0" mnemonicParsing="false" onAction="#handleWatchSeries" prefHeight="89.0" prefWidth="126.0" text="Watch series" />
 
-      <Text fx:id="accountExpired" layoutX="259.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="81.60000000000014" />
+      <Text fx:id="log" layoutX="259.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="81.60000000000014" />
    </children>
 </AnchorPane>
