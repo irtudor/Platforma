@@ -4,9 +4,7 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import exceptions.MovieAlreadyExistsException;
-import exceptions.UsernameAlreadyExistsException;
 import models.Movie;
-import models.User;
 import org.apache.commons.io.FileUtils;
 
 import java.io.IOException;

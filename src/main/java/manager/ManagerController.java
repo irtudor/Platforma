@@ -1,6 +1,7 @@
 package manager;
 
 import exceptions.MovieAlreadyExistsException;
+import exceptions.SeriesAlreadyExistsException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,8 +12,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import models.Movie;
-import models.User;
+import models.Series;
 import services.MoviesService;
+import services.SeriesService;
 
 import java.io.IOException;
 import java.util.List;
@@ -30,6 +32,24 @@ public class ManagerController {
     private TextField movieReview;
     @FXML
     private Button addMovie;
+
+    @FXML
+    private ChoiceBox series;
+    @FXML
+    private TextField seriesTitle;
+    @FXML
+    private TextField seriesSeason;
+    @FXML
+    private TextField seriesEpisode;
+    @FXML
+    private TextField seriesYear;
+    @FXML
+    private TextField seriesDescription;
+    @FXML
+    private TextField seriesReview;
+    @FXML
+    private Button addSeries;
+
     @FXML
     private Text actionStatus;
 
@@ -38,8 +58,13 @@ public class ManagerController {
         for (Movie movieToLoad : moviesToLoad){
             movies.getItems().add(movieToLoad.getTitle());
         }
-
         movies.getSelectionModel().selectFirst();
+
+        List<Series> seriesToLoad = SeriesService.seriesList;
+        for (Series singleSeriesToLoad : seriesToLoad){
+            series.getItems().add(singleSeriesToLoad.getTitle() + " S:" + singleSeriesToLoad.getSeason() + " E:" + singleSeriesToLoad.getEpisode());
+        }
+        series.getSelectionModel().selectFirst();
     }
 
     public static void openManagerPanel() throws IOException {
@@ -58,6 +83,17 @@ public class ManagerController {
             movies.getSelectionModel().selectFirst();
             actionStatus.setText("Movie added successfully!");
         } catch (MovieAlreadyExistsException | IOException e) {
+            actionStatus.setText(e.getMessage());
+        }
+    }
+
+    public void handleAddSeries() {
+        try {
+            SeriesService.addSeries(seriesTitle.getText(), seriesSeason.getText(), seriesEpisode.getText(), seriesYear.getText(), seriesDescription.getText(), seriesReview.getText());
+            series.getItems().add(seriesTitle.getText() + " S:" + seriesSeason.getText() + " E:" + seriesEpisode.getText());
+            series.getSelectionModel().selectFirst();
+            actionStatus.setText("Series added successfully!");
+        } catch (SeriesAlreadyExistsException | IOException e) {
             actionStatus.setText(e.getMessage());
         }
     }
