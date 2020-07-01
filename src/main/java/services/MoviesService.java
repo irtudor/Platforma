@@ -3,6 +3,7 @@ package services;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import customer.CustomerController;
 import exceptions.MovieAlreadyExistsException;
 import models.Movie;
 import org.apache.commons.io.FileUtils;
@@ -26,6 +27,7 @@ public class MoviesService {
 
         movies = objectMapper.readValue(MOVIES_PATH.toFile(), new TypeReference<List<Movie>>() {
         });
+        CustomerController.movies = movies;
     }
 
     public static void addMovie(String title, String year, String description, String review) throws MovieAlreadyExistsException, IOException {
@@ -41,7 +43,7 @@ public class MoviesService {
         }
     }
 
-    private static void persistMovies() throws IOException {
+    public static void persistMovies() throws IOException {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(MOVIES_PATH.toFile(), movies);
